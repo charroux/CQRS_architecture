@@ -28,15 +28,10 @@ repositories {
 ext['springCloudVersion'] = 'Greenwich.RC2'
 
 dependencies {
-
-    implementation('org.springframework.boot:spring-boot-starter-actuator')
-    
 	implementation('org.springframework.boot:spring-boot-starter-web')
 	implementation('org.springframework.cloud:spring-cloud-stream')
-    //implementation('org.springframework.cloud:spring-cloud-stream-binder-rabbit')
     implementation('org.springframework.cloud:spring-cloud-stream-binder-kafka')
-    runtimeOnly('org.springframework.boot:spring-boot-devtools')
-	testImplementation('org.springframework.boot:spring-boot-starter-test')
+	compile project('::library')
 	testImplementation('org.springframework.cloud:spring-cloud-stream-test-support')
 }
 
