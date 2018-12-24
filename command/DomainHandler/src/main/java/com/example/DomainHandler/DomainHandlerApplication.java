@@ -14,41 +14,29 @@
  * limitations under the License.
  */
 
-package com.example.CommandHandler;
+package com.example.DomainHandler;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.cloud.stream.messaging.Sink;
-import org.springframework.cloud.stream.messaging.Source;
-import org.springframework.context.annotation.Bean;
-import org.springframework.core.io.ResourceLoader;
-import org.springframework.integration.annotation.InboundChannelAdapter;
-import org.springframework.integration.annotation.Poller;
-import org.springframework.integration.core.MessageSource;
-import org.springframework.messaging.support.GenericMessage;
 
-import javax.annotation.PostConstruct;
-import javax.sql.DataSource;
-import java.util.concurrent.atomic.AtomicBoolean;
-
-//@EnableBinding(Sink.class)
+@EnableBinding(Sink.class)
 @SpringBootApplication
-public class CommandHandlerApplication {
+public class DomainHandlerApplication {
 
 	public static void main(String... args){
-		SpringApplication.run(CommandHandlerApplication.class, args);
+		SpringApplication.run(DomainHandlerApplication.class, args);
 	}
 
-	/*@Autowired
-	private ResourceLoader resourceLoader;
+	//@Autowired
+	//private ResourceLoader resourceLoader;
 
 	@StreamListener("input")
 	public void input(Command foo) {
-		System.out.println("sink>>>>>>>");
+		System.out.println("sink >>>>>>> ");
 		System.out.println(foo);
-	}*/
+	}
 
 }
